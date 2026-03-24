@@ -198,13 +198,10 @@ SSRS reports can be:
 
 ---
 
-## 🎓 Portfolio Talking Points
+## 🎓 **Skills Demonstrated**
 
-**For Interviews:**
+**Technical:**
 
-*"I've built SSRS paginated reports from CMS hospital data using Report Builder. The reports are parameter-driven with state filtering, include conditional formatting to flag providers with ERR above the penalty threshold, and feature embedded bar charts for executive summaries. Both reports connect directly to SQL Server analytical views and are designed for print/PDF distribution to stakeholders."*
-
-**Technical Skills Demonstrated:**
 ✅ Report Builder proficiency  
 ✅ Parameter design and default values  
 ✅ Conditional formatting with business rules  
@@ -214,6 +211,7 @@ SSRS reports can be:
 ✅ PDF export optimization  
 
 **Healthcare Domain:**
+
 ✅ ERR penalty threshold (1.0) business rule  
 ✅ State-level market analysis  
 ✅ Condition-specific performance tracking  
