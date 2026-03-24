@@ -385,27 +385,27 @@ After building and analyzing the complete dashboard pipeline, several key health
 
 ### For Managed Care Organizations (Molina Healthcare, Garner Health)
 
-**Network Optimization Strategy:**
+🌐**Network Optimization Strategy:**
 - **Provider Tiering:** Use the 48.15% penalty rate as baseline to identify improvement opportunities — steer members toward the 4.8% of Top Performer facilities
 - **Quality Scorecards:** Combine ERR performance with star ratings and ownership type from `vw_top_bottom_performers` to build comprehensive provider assessment tools
 - **Centers of Excellence:** Partner with hospitals achieving ERR < 0.90 to develop condition-specific referral networks
 
-**Risk-Based Contracting:**
+💵**Risk-Based Contracting:**
 - **Value-Based Payments:** Structure incentive programs rewarding hospitals that achieve ERR < 0.95 (better than national average of 1.002)
 - **Penalty Mitigation:** Flag High Risk facilities (ERR > 1.10) for enhanced care coordination and discharge planning support to reduce readmission exposure
 - **Performance Monitoring:** Use quarterly ERR trends to adjust network participation and reimbursement tiers
 
-**Geographic Market Strategy:**
+📍**Geographic Market Strategy:**
 - **Florida Market Focus:** Leverage `vw_florida_hospitals` to identify high-quality, cost-effective providers in South Florida (Miami-Dade, Broward, Palm Beach) where Molina has significant membership
 - **State Expansion Planning:** Compare state-level performance using `vw_state_performance` to guide market entry decisions and competitive positioning
 - **Regional Network Development:** Build differentiated networks in states with wide ERR variance to capture quality-conscious membership
 
-**Condition-Specific Programs:**
+🩺**Condition-Specific Programs:**
 - **Resource Allocation:** Focus care management on conditions with highest ERR variance (Heart Failure, COPD, Pneumonia) where coaching interventions can reduce readmissions
 - **Transitional Care:** Deploy pharmacy and nursing support for members discharged from High Risk facilities to mitigate elevated readmission probability
 - **Preventive Outreach:** Target pre-admission interventions for members scheduled for elective procedures at facilities with ERR > 1.0
 
-**Florida‑Specific Provider Recommendations (Data‑driven, based on ERR, tiers, and regional variation):**
+🏥**Florida‑Specific Provider Recommendations (Data‑driven, based on ERR, tiers, and regional variation):**
 
 - **Top Performers (Tier 1 Candidates):** <br>
     * Sarasota Memorial Hospital — ERR 0.74 (CABG), 5 stars
@@ -423,11 +423,11 @@ After building and analyzing the complete dashboard pipeline, several key health
 - **High‑Penalty Hospitals (ERR > 1.0):** Hospitals with ERR above the CMS penalty threshold are strong candidates for quality improvement contracting,
   including readmission reduction programs, transitional care pathways, and performance‑based incentives. These partnerships help reduce avoidable readmissions and lower total cost of care. 
 
-**Member Communication & Transparency:**
+📢**Member Communication & Transparency:**
 - Translate ERR metrics into consumer-friendly language for provider directories and decision-support tools
 - Highlight performance differences to educate members on choosing high-quality facilities
 
-**Quality Monitoring:**
+🔍**Quality Monitoring:**
 - Implement quarterly ERR trend monitoring using the analytical views
 - Set up automated alerts for provider performance changes or new penalty exposures
 
@@ -453,25 +453,27 @@ While the current version provides a complete, functional healthcare analytics w
 ## 📚 What This Project Demonstrates
 
 ### 🧠 Skills Demonstrated
+
 ✅**Technical**
 - SQL Server (schema, views, validation)
 - Power BI (DAX, modeling, storytelling)
 - SSRS (parameters, conditional formatting)
 - Data cleaning & QA
 - Git + GitHub
+  
 ✅**Healthcare Domain**
 - HRRP program
 - ERR methodology
 - Penalty thresholds
 - Star ratings
 - Managed care network strategy
+
 ✅**Business & Strategy**
 - Provider tiering
 - Value‑based contracting
 - Geographic market analysis
 - Network optimization
 - Executive storytelling
-
 
 ### Portfolio Differentiators
 - **Real government data** (not mock/simulated)
@@ -501,7 +503,7 @@ Healthcare Data Analytics | SQL Server + Power BI + Excel
 
 Interested in discussing this project or healthcare analytics?  
 📧 [mairilynyera@gmail.com]  
-💼 [LinkedIn Profilewww.linkedin.com/in/mairilyn-yera-galindo-07a93932]  
+💼 [www.linkedin.com/in/mairilyn-yera-galindo-07a93932]  
 📁 [Additional Portfolio Projects](https://github.com/Data-Strata)
 
 ---
