@@ -95,7 +95,7 @@ Each view represents a specific business question and pre-aggregates data for op
 ---
 
 ### 2. `vw_state_performance`
-**Returns:** ~50-56 rows (one per state/territory)
+**Returns:** 56 rows (one per state/territory)
 
 **Purpose:** State-level readmission performance aggregation across all conditions.
 
@@ -120,7 +120,7 @@ Each view represents a specific business question and pre-aggregates data for op
 ---
 
 ### 3. `vw_top_bottom_performers`
-**Returns:** ~8,000 rows (non-suppressed measures only)
+**Returns:** 11,720 rows (non-suppressed measures only)
 
 **Purpose:** Hospital rankings within each condition with top/bottom 20 flags.
 
@@ -146,7 +146,7 @@ Each view represents a specific business question and pre-aggregates data for op
 ---
 
 ### 4. `vw_florida_hospitals`
-**Returns:** Varies (FL hospitals only, non-suppressed measures)
+**Returns:** 771 rows (FL hospitals only, non-suppressed measures)
 
 **Purpose:** Florida-specific hospital performance with national benchmarking and South Florida regional flag.
 
@@ -167,7 +167,7 @@ Each view represents a specific business question and pre-aggregates data for op
 - `star_rating`, `emergency_services`, `hospital_ownership` — Quality and service attributes
 
 **Strategic Relevance:**
-This view directly supports managed care network decisions in Molina Healthcare's Florida Medicaid market. The `region` flag enables targeted analysis of South Florida — a high-density market with significant Medicaid enrollment.
+This view directly supports managed care network decisions in regional healthcare provider's market such as Molina Healthcare's Florida Medicaid. The `region` flag enables targeted analysis of South Florida — a high-density market with significant Medicaid enrollment.
 
 **Power BI Usage:** Florida Provider Spotlight page (FL-only analysis, South FL comparison)
 
@@ -212,7 +212,7 @@ This view directly supports managed care network decisions in Molina Healthcare'
                        ▼
             ┌──────────────────────┐
             │   Power BI Desktop   │
-            │   (5 Dashboard Pages)│
+            │   (6 Dashboard Pages)│
             └──────────────────────┘
 ```
 
@@ -366,7 +366,7 @@ Runs 12 validation checks including:
 | 3. Geographic Analysis | vw_state_performance |
 | 4. Florida Provider Spotlight | vw_florida_hospitals |
 | 5. Data Quality & Methodology | *(Reference cleaning_log.xlsx, not SQL views)* |
-
+| 6. Florida Provider's Recommendations Bookmark| vw_florida_hospitals |
 ---
 
 ## 🔧 Troubleshooting
