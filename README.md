@@ -143,15 +143,15 @@ The SQL Server database is organized into two layers:
    - Aggregates: National performance, penalty rates, tier distributions
    - Powers: Overview page, Condition Deep-Dive page
 
-2. **vw_state_performance** — ~50-56 rows (one per state/territory)
+2. **vw_state_performance** — 56 rows (one per state/territory)
    - Aggregates: State-level ERR averages, penalty rates, star ratings
    - Powers: Geographic Analysis page
 
-3. **vw_top_bottom_performers** — ~8,000 rows (non-suppressed measures)
+3. **vw_top_bottom_performers** — 11,720 rows (non-suppressed measures)
    - Includes: Rankings per condition, top/bottom 20 flags
    - Powers: Condition Deep-Dive rankings, provider comparison tables
 
-4. **vw_florida_hospitals** — Varies by FL hospital count
+4. **vw_florida_hospitals** — 771 rows (FL hospital count)
    - Includes: FL rankings, national comparisons, South Florida regional flag
    - Powers: Florida Provider Spotlight page (strategic for Molina Healthcare)
 
