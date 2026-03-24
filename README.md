@@ -405,7 +405,7 @@ After building and analyzing the complete dashboard pipeline, several key health
 - **Transitional Care:** Deploy pharmacy and nursing support for members discharged from High Risk facilities to mitigate elevated readmission probability
 - **Preventive Outreach:** Target pre-admission interventions for members scheduled for elective procedures at facilities with ERR > 1.0
 
-**Florida‑Specific Provider Recommendations (Data‑driven, based on ERR, tiers, and regional variation)**
+**Florida‑Specific Provider Recommendations (Data‑driven, based on ERR, tiers, and regional variation):**<br>
 **Top Performers (Tier 1 Candidates)**<br>
 - Sarasota Memorial Hospital — ERR 0.74 (CABG), 5 stars
 - Holmes Regional Medical Center — ERR 0.82 (Pneumonia)<br>
