@@ -1,0 +1,39 @@
+Excel Validation Findings,,,,
+Issue #,Column Affected,Issue Found,Action Taken,Row Count Affected
+1,Number of Discharges,"Value = ""N/A "" (CMS suppression for low case volume (<25 cases))",Replaced with NULL /blank for analysis,10088
+2,Number of Readmissions,"Two suppression types found: ""N/A"" (full suppression — ratios also blank) and ""Too Few to Report"" (partial suppression — ratios valid)",Both replaced with NULL/blank; suppression type captured in suppressed_flag column (Full / Partial / None),"""N/A"" = 6610 rows, ""Too Few to Report"" = 3683 rows (Total = 10293)"
+3,Excess Readmission Ratio,"Value = ""N/A"" (suppressed by CMS)",Replaced with NULL;suppressed_flag = Y,6610
+4,Predicted Readmission Rate,"Value = ""N/A"" (suppressed by CMS)",Replaced with NULL; covered by suppressed_flag,6610
+5,Expected Readmission Rate,"Value = ""N/A"" (suppressed by CMS)",Replaced with NULL; covered by suppressed_flag,6610
+6,"ERR, Predicted Rate, Expected Rate, No. Discharges, No. Readmissions",Cross-column suppression consistency check,Verified all 5 suppressed columns match exactly — zero mismatches found,N/A
+7,No. Readmissions,"""Too Few to Report"" present alongside valid ERR values — partial suppression identified",Confirmed ratios valid for these rows; suppressed_flag updated to 3-tier: Full / Partial / None,3683
+8,suppressed_flag,Original Y/N flag insufficient — two suppression tiers exist,Revised to Full / Partial / None using ERR and No. Readmissions columns,All rows
+9,suppressed_flag,Formula-based flag at risk of recalculating after source cells blanked,Converted suppressed_flag column to static values (Paste Special ? Values Only) after verifying counts,All rows
+10,suppressed_flag,Verification check — flag counts before locking,"Full = 6,610 / Partial = 3,683 / None = 8037 (Total = 18330) confirmed correct before conversion",N/A
+11,Measure Name,CMS codes not human-readable (e.g. READM-30-HF-HRRP) — require translation for dashboard use,Created condition_short column using nested IF formula mapping 6 CMS codes to readable names,All rows
+12,condition_short,Verification check — formula accuracy and row distribution,"Zero ""CHECK"" values returned — all 6 codes mapped correctly; each condition = 3,055 rows, total = 18,330",18330
+13,condition_short,Formula-based column at risk of recalculating if source changes,Converted to static values (Paste Special ? Values Only) after verification,All rows
+14,"ERR, Predicted Rate, Expected Rate, No. Discharges, No. Readmissions","All 5 columns imported as text — left-aligned, numeric formulas failing",Converted all to number format using Data ? Text to Columns ? General,All non-null rows
+15,performance_tier,New column needed to categorize ERR into readable bands for dashboard use,Created performance_tier using 5-tier logic: Top Performer / At or Below Average / Elevated / High Risk / Suppressed,18330
+16,performance_tier,Verification check — tier distribution,"Top Performer = 874, At or Below Average = 5,203, Elevated = 4,627, High Risk = 1,016, Suppressed = 6,610 — total = 18,330",N/A
+17,Provider ID + condition_short,Duplicate check — verified each hospital/condition combination is unique,COUNTIFS returned 1 for all rows — no duplicates found,18330
+18,State,TRIM and format check — length and capitalization,"All values = 2 characters, uppercase — no issues found",18330
+19,Facility Name,"168 rows with leading, trailing, or double spaces detected",Created facility_name_clean column using TRIM() — converted to static values,168
+20,Facility Name,Capitalization consistency check,All values consistent — no issues found,18330
+21,Facility ID (cleaned_data),Format mismatch with hospital_info_clean Facility ID — number vs 6-digit text with leading zero,Created facility_id_clean column using TEXT formula to standardize to 6-digit format,18330
+22,Hospital Overall Rating,"""Not Available"" present — hospital not rated by CMS","Created rating_available flag (Y/N) before blanking; replaced ""Not Available"" with NULL; converted to number format",2560 rows - total data rows confirmed 5426
+23,State (hospital_info_clean),TRIM and format check — length and capitalization,"All values = 2 characters, uppercase — no issues found","5,426"
+24,"City/Town, Hospital Type, Hospital Ownership, Emergency Services",TRIM check on all four text columns,All values clean — zero rows needing trim,"5,426"
+25,"Emergency Services, Hospital Type, Hospital Ownership",Capitalization and consistency check,All values consistent — no issues found,"5,426"
+26,Count of Facility Safety Measures,Not Available present — same pattern as Hospital Overall Rating,"Replaced ""Not Available"" with NULL; converted to number format","2,073"
+27,Hospital Type,Only Acute Care hospitals appear in joined data,Confirmed correct — HRRP program exclusively targets Acute Care hospitals,"18,330"
+28,All joined columns,VLOOKUP join from hospital_info_clean to cleaned_data,All 7 columns joined successfully on facility_id_clean — zero #N/A errors; converted to static values,"18,330"
+,,,,
+,,,,
+,,,,
+SQL Validation Findings,,,,
+Issue #,Column Affected,Issue Found,Action Taken,Row Count Affected
+29,Excess Readmission Ratio,"Post-import validation revealed 7 rows with NULL ERR despite valid Predicted and Expected rates — not standard CMS suppression, likely a statistical edge case in CMS methodology","Updated suppressed_flag to ""ERR Only"" via SQL UPDATE statement",7
+30,performance_tier,"7 ERR Only rows incorrectly assigned ""At or Below Average"" during Excel cleaning — ERR was null so tier calculation was invalid","Updated performance_tier to ""Suppressed"" for these rows via SQL UPDATE statement",7
+31,suppressed_flag,Four-tier suppression model identified post-import: Full / Partial / ERR Only / None,"suppressed_flag updated to reflect four tiers — ERR Only isolated from Partial. Final counts: Full = 6,610 / Partial = 3,680 / ERR Only = 7 / None = 8,033 — total = 18,330",7
+32,suppressed_flag,"Retrospective note — original Excel formula =IF(ISBLANK(ERR), ""Full"", IF(Num_Readmissions=""Too Few to Report"", ""Partial"", ""None"")) was insufficient. Formula assigned ""Full"" to any blank ERR without checking whether Predicted and Expected rates were also blank — missing the ERR Only scenario where ERR is null but rates are valid. Correct logic should check all three ratio columns together before assigning Full.",No Excel correction needed — caught and corrected during SQL validation via UPDATE statement (see rows 29-31),7

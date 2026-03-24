@@ -1,0 +1,56 @@
+# Power BI Files
+*.pbix.tmp
+*.pbix~
+
+# Excel temporary files
+~$*.xlsx
+~$*.xls
+*.tmp
+
+# Local SQL Server backups
+*.bak
+*.mdf
+*.ldf
+
+# Windows thumbnail cache
+Thumbs.db
+
+# macOS files
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Python (if used for data processing)
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+
+# R (if used for data processing)
+.Rhistory
+.RData
+.Rproj.user
+
+# Log files
+*.log
+
+# Sensitive data (if any - though project uses public data)
+*_sensitive*
+*_private*
+*_confidential*
+
+# Local configuration files
+config.local.json
+connection_strings.txt
+
+# Large raw data files (optional - keep download links instead)
+# data/raw/*.csv
+# Uncomment above line if raw files are very large
+
+# Output files from testing
+test_output/
+temp/
