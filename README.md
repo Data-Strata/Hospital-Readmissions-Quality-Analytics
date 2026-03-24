@@ -406,17 +406,17 @@ After building and analyzing the complete dashboard pipeline, several key health
 - **Preventive Outreach:** Target pre-admission interventions for members scheduled for elective procedures at facilities with ERR > 1.0
 
 **Florida‑Specific Provider Recommendations (Data‑driven, based on ERR, tiers, and regional variation)**
-**Top Performers (Tier 1 Candidates)**
+**Top Performers (Tier 1 Candidates)**<br>
 - Sarasota Memorial Hospital — ERR 0.74 (CABG), 5 stars
-- Holmes Regional Medical Center — ERR 0.82 (Pneumonia)
-**High‑ERR Regions (Target for Care Coordination)**
+- Holmes Regional Medical Center — ERR 0.82 (Pneumonia)<br>
+**High‑ERR Regions (Target for Care Coordination)**<br>
 - Palm Beach — ERR 1.0601
 - Orlando Metro — ERR 1.0483
-- Tampa Bay — ERR 1.0454
-**Lower‑ERR Regions (Network Expansion)**
+- Tampa Bay — ERR 1.0454<br>
+**Lower‑ERR Regions (Network Expansion)**<br>
 - Broward — ERR 1.0391
-- Panhandle — ERR 1.0283
-**High‑Penalty Hospitals (ERR > 1.0)**
+- Panhandle — ERR 1.0283<br>
+**High‑Penalty Hospitals (ERR > 1.0)**<br>
 **Target for quality improvement contracting**
 
 **Member Communication & Transparency:**
