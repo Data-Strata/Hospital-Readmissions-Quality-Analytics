@@ -366,7 +366,7 @@ Runs 12 validation checks including:
 | 3. Geographic Analysis | vw_state_performance |
 | 4. Florida Provider Spotlight | vw_florida_hospitals |
 | 5. Data Quality & Methodology | *(Reference cleaning_log.xlsx, not SQL views)* |
-| 6. Florida Provider's Recommendations Bookmark| vw_florida_hospitals |
+| 6. Florida Provider's Recommendations Bookmark| * _Florida Provider Spotlight_ Page|
 ---
 
 ## 🔧 Troubleshooting
