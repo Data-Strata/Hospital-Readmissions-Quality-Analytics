@@ -1,3 +1,5 @@
+
+![Data-StrataLogoCompact](https://github.com/user-attachments/assets/903fd5e9-7286-41e1-bd15-05c95ef4e2c5)
 # 🏥 Hospital Readmissions & Quality Analytics
 
 > **End-to-end healthcare data analytics project using CMS public data — from Excel cleaning to SQL database design to Power BI dashboard storytelling.**
