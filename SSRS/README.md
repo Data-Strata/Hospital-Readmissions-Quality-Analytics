@@ -10,6 +10,10 @@ Both reports connect directly to the `HospitalReadmissions` SQL Server database 
 
 ## 📊 Reports Included
 
+## 📸 Sample Outputs
+- [Florida Provider Detail Report (PDF, 26 pages)](outputs/Hospital_Readmissions_Detail_FL.pdf)
+- [State Summary Screenshot](outputs/State_Summary_FL_Screenshot.png)
+
 ### 1. Hospital_Readmissions_Detail.rdl
 **Provider Detail Report — State-Filtered Hospital Performance**
 
@@ -87,6 +91,11 @@ COUNT(CASE WHEN excess_readmission_ratio > 1.0 THEN 1 END) AS Hospitals_Penalize
 ## 🛠️ How to Use These Reports
 
 ### Prerequisites
+- [ ] SQL Server Report Builder installed
+- [ ] Access to HospitalReadmissions database
+- [ ] Base tables populated (hospitals, readmission_measures)
+- [ ] Windows Authentication configured (or SQL Server auth)
+      
 - SQL Server Report Builder installed (free download from Microsoft)
 - Access to the `HospitalReadmissions` SQL Server database
 - Both base tables (`hospitals`, `readmission_measures`) populated with data
@@ -217,8 +226,32 @@ SSRS reports can be:
 ✅ Condition-specific performance tracking  
 ✅ Provider quality reporting  
 
----
+## ▦ **Skill Matrix**
 
+| **Skill Category** | **Demonstrated** |
+| --- | --- |
+| **SSRS Report Builder** | Parameters, Grouping, Conditional Formatting, Charting |
+| **SQL Server Integration** | Direct database queries, Views, Joins, Aggregations |
+| **Healthcare Domain** | CMS HRRP metrics, ERR thresholds, Quality reporting |
+| **Output Formats** | PDF (regulatory), Excel (analysis), Word (executive) |
+
+---
+## 🔧 Technical Implementation Notes
+
+**Data Flow:**
+SQL Server Views → SSRS Embedded Queries → Report Builder Rendering → PDF/Excel Export
+
+**Performance Considerations:**
+- State parameter limits query scope (vs. pulling all 50 states)
+- Direct view queries avoid dynamic SQL injection risks
+- Aggregations pre-calculated in SQL views for faster rendering
+
+**Data Governance:**
+- Reports pull from same analytical views as Power BI dashboards
+- Single source of truth ensures consistency across reporting layers
+- Parameter defaults prevent accidental "all data" queries
+
+---
 ## 🔧 Troubleshooting
 
 **Report won't connect to database:**
