@@ -11,8 +11,21 @@ Both reports connect directly to the `HospitalReadmissions` SQL Server database 
 ## 📊 Reports Included
 
 ## 📸 Sample Outputs
-- [Florida Provider Detail Report (PDF, 26 pages)](outputs/Hospital_Readmissions_Detail_FL.pdf)
-- [State Summary Screenshot](outputs/State_Summary_FL_Screenshot.png)
+- [FL Hospital Readmission Detail Report (PDF, 26 pages)](outputs/Hospital_Readmissions_Detail_FL.pdf) — Complete facility-level breakdown for 200+ Florida hospitals (26-page report) 
+
+## 📸 Report Builder Screenshots
+
+### State Summary Report
+![Provider Detail - Page 1 of 31](../assets/screenshots/ssrs_state_summary.png)
+*Report Builder interface showing state parameter and conditional formatting*
+
+### Provider Detail Report  
+![Provider Detail - Page 1 of 31](../assets/screenshots/ssrs_detail_report.png)
+*Multi-page provider detail report with ERR penalty highlighting*
+
+### Clean Output for Stakeholders
+![Final State Summary Output](outputs/State_Summary_FL.png)
+*Stakeholder-ready report with embedded chart*
 
 ### 1. Hospital_Readmissions_Detail.rdl
 **Provider Detail Report — State-Filtered Hospital Performance**
@@ -42,9 +55,6 @@ Direct SQL query joining `hospitals` and `readmission_measures` tables
 - Network performance monitoring
 - Provider steering decisions
 - Member communication materials
-
-**Sample Output:**  
-`outputs/Hospital_Readmissions_Detail_FL.pdf` — 26-page report showing all Florida hospitals
 
 ---
 
@@ -84,7 +94,7 @@ COUNT(CASE WHEN excess_readmission_ratio > 1.0 THEN 1 END) AS Hospitals_Penalize
 - Competitive market positioning
 
 **Sample Output:**  
-`outputs/State_Summary_FL_Screenshot.png` — Shows Florida summary table + chart
+`outputs/State_Summary_FL_Screenshot.png` — Executive state summary with aggregated metrics and embedded chart (Florida focus)
 
 ---
 
