@@ -8,8 +8,6 @@ Both reports connect directly to the `HospitalReadmissions` SQL Server database 
 
 ---
 
-## 📊 Reports Included
-
 ## 📸 Sample Outputs
 - [FL Hospital Readmission Detail Report (PDF, 26 pages)](outputs/Hospital_Readmissions_Detail_FL.pdf) — Complete facility-level breakdown for 200+ Florida hospitals (26-page report) 
 
@@ -26,6 +24,9 @@ Both reports connect directly to the `HospitalReadmissions` SQL Server database 
 ### Clean Output for Stakeholders
 ![Final State Summary Output](outputs/State_Summary_FL.png)
 *Stakeholder-ready report with embedded chart*
+
+---
+## 📊 Reports Included
 
 ### 1. Hospital_Readmissions_Detail.rdl
 **Provider Detail Report — State-Filtered Hospital Performance**
