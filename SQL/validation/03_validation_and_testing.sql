@@ -96,7 +96,7 @@ GROUP BY suppressed_flag
 ORDER BY row_count DESC;
 
 PRINT '';
-PRINT 'Expected tiers: Full, Partial, ERR Only, None';
+PRINT 'Expected tiers: Full, Partial, None';
 PRINT '';
 
 -- ============================================================================
