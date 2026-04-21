@@ -420,7 +420,6 @@ ERR IS NULL            → "Suppressed"
 ### Suppression Flag Types
 - **Full**: ERR, num_discharges, num_readmissions, predicted_rate, expected_rate all NULL
 - **Partial**: num_discharges and num_readmissions = NULL, but ERR is valid
-- **ERR Only**: num_discharges, num_readmissions, predicted_rate, expected_rate are valid, but ERR = NULL
 - **None**: All metrics populated
 
 ### Index Strategy
@@ -455,4 +454,4 @@ ERR IS NULL            → "Suppressed"
 © 2025 Mairilyn Yera Galindo | *Data-Strata Analytics Portfolio*  
 SQL Server Database Design | Healthcare Analytics
 
-*Last Updated: March 2025*
+*Last Updated: March 2026*
