@@ -126,8 +126,8 @@ Tests for duplicates within same Provider ID + Condition combination.
 | Number of Discharges | 10,293 | ⚠️ **CMS Suppression Pattern** |
 | Number of Readmissions | 10,293 | ⚠️ **CMS Suppression Pattern** |
 | Excess Readmission Ratio | 6,610 | ⚠️ **Full Suppression (low volume)** |
-| Predicted Readmission Rate | 6,617 | ⚠️ **Suppression + 7 edge cases** |
-| Expected Readmission Rate | 6,617 | ⚠️ **Suppression + 7 edge cases** |
+| Predicted Readmission Rate | 6,610 | ⚠️ **Full Suppression**|
+| Expected Readmission Rate | 6,610 | ⚠️ **Full Suppression** |
 
 **Key Finding:** NULL patterns follow **CMS data suppression methodology** (see Step 6).
 
@@ -320,10 +320,10 @@ All 32+ cleaning actions were documented in **`cleaning_log.xlsx`** with the fol
 
 | ID | Dataset | Field | Issue | Resolution | Status |
 |----|---------|-------|-------|------------|--------|
-| 001 | Hospital Info | Hospital_Overall_Rating | 892 NULL values | Retained as NULL (valid - not all rated) | ✅ Resolved |
-| 002 | Readmissions | Excess_Readmission_Ratio | 6,610 NULL values | Classified as "Full Suppression" | ✅ Resolved |
-| 003 | Readmissions | Number_of_Discharges | 10,293 NULL values | Classified as Full/Partial suppression | ✅ Resolved |
-| 004 | Readmissions | ERR outlier | 1 value at 0.4698 | Validated as legitimate high performer | ✅ Resolved |
+| 1 | Hospital Info | Hospital_Overall_Rating | 892 NULL values | Retained as NULL (valid - not all rated) | ✅ Resolved |
+| 2 | Readmissions | Excess_Readmission_Ratio | 6,610 NULL values | Classified as "Full Suppression" | ✅ Resolved |
+| 3 | Readmissions | Number_of_Discharges | 10,293 NULL values | Classified as Full/Partial suppression | ✅ Resolved |
+| 4 | Readmissions | ERR outlier | 1 value at 0.4698 | Validated as legitimate high performer | ✅ Resolved |
 
 ---
 
